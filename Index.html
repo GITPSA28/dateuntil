@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Until</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@600&family=Noto+Sans:wght@600&family=Poppins:ital,wght@0,500;0,600;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="newyear()">
+    <div class="navigation">
+        <div class="navbar">
+            <div class="brand">
+                <div class="logo">
+                    <img src="logo2.png" alt="logo">
+                </div>
+                DAYS UNTILL
+
+            </div>
+            <div class="buttons">
+                <ul>
+                    <li><a href="#">Home</a> </li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact us</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="datetitle" id="datetext">
+        </div>
+        <div class="inputgroup">
+            <div class="datetext">
+                until :
+            </div>
+            <div class="input">
+                <input type="date" name="date" id="date" minDate="0" onchange="datecalc()">
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function calc(d) {
+            var c = new Date();
+            var difdate = d.getTime() - c.getTime();
+            var days = Math.round(difdate / (1000 * 3600 * 24));
+            return days;
+        }
+
+        function datecalc() {
+            var datepicker = new Date(document.getElementById("date").value);
+            var datetitle = document.getElementById("datetext");
+
+            var days = calc(datepicker);
+            datetitle.innerHTML = days + " Days";
+            document.getElementById("test").setAttribute("akhi", days);
+
+        }
+        function newyear() {
+            var d = new Date();
+            let year = d.getFullYear() + 1;
+            var nextnew = new Date("01-01-" + year);
+            var datetitle = document.getElementById("datetext");
+            var days = calc(nextnew);
+            datetitle.innerHTML = days + " Days";
+            var datepicker = document.getElementById("date");
+            datepicker.value = year + "-01-01";
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

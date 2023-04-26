@@ -1,0 +1,82 @@
+:root {
+    --blue: #2d55ff;
+    --white: #ffffff;
+  }
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation{
+    display: flex;
+    width: 100%;
+    background-color: var(--blue);
+    background-color: va;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.288);
+}
+.navbar{
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.brand{
+    font-weight: 700;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+}
+img{
+    filter: invert(100%);
+    width: 45px;
+    margin-right: 10px;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+li{
+    margin-inline:10px ;
+   
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease 0s;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+
+.main{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.datetitle{
+    font-weight: 800;
+    font-style: italic;
+    font-size: 20vh;
+    color: var(--blue);
+}
+.inputgroup{
+    margin-top: 40px;
+    display: flex;
+}
+input{
+    margin-left: 10px;
+    color: var(--blue);
+    border: none;
+    outline: none;
+}
